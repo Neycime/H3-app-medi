@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TsiangConnect </string>
+    <string name="text_welcome">Bienvenu</string>
+    <string name="sign_up">inscription</string>
+    <string name="sign_in">connexion</string>
+    <string name="text_rdv">Prendre rendze-vous</string>
+</resources>
