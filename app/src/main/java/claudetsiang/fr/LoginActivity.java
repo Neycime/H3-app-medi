@@ -3,7 +3,6 @@ package claudetsiang.fr;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -88,19 +87,30 @@ public class LoginActivity extends AppCompatActivity {
         userData.put("email",email_value);
         userData.put("password",password_value);
 
-        final String API_REGISTER = "https://androidapi.herokuapp.com/api/v1/auth/login";
+        //final String API_REGISTER = "https://androidapi.herokuapp.com/api/v1/auth/login";
+        final String API = getResources().getString(R.string.BASE_URL) + "/api/v1/auth/login";
 
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, API_REGISTER, new JSONObject(userData),
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, API, new JSONObject(userData),
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
                         try {
                             if(response.getBoolean("success")){
                                 String token = response.getString("token");
+                                JSONObject currentUser = response.getJSONObject("actor");
+                                int id_actor = currentUser.getInt("id_actor");
+                                int feature = currentUser.getInt("id_feature");
                                 sharedPreferenceClass.setValue_string("token", token);
+                                sharedPreferenceClass.setValue_int("id_actor", id_actor);
+                                sharedPreferenceClass.setValue_int("feature", feature);
                                 Toast.makeText(LoginActivity.this, response.getString("token"), Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(LoginActivity.this, HomeActivity.class));
-                                finish();
+                                if(feature == 1){
+                                    startActivity(new Intent(LoginActivity.this, HomePatientActivity.class));
+                                    finish();
+                                }else if(feature == 2){
+                                    startActivity(new Intent(LoginActivity.this, HomeDoctorActivity.class));
+                                    finish();
+                                }
                             }
                             progress_bar.setVisibility(view.GONE);
                         }catch(JSONException je){

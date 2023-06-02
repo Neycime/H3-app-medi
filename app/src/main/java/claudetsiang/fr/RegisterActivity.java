@@ -35,17 +35,17 @@ import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
     private TextView login_text;
-    private EditText input_username, input_email, input_password, input_passwordConfirm;
+    private EditText input_name, input_email, input_password, input_passwordConfirm;
     private Button btn_register;
     private ProgressBar progress_bar;
 
-    private String username_value, email_value, password_value, passwordConfirm_value;
+    private String name_value, email_value, password_value, passwordConfirm_value;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         login_text = findViewById(R.id.login_text);
-        input_username = findViewById(R.id.input_username);
+        input_name = findViewById(R.id.input_name);
         input_email = findViewById(R.id.input_email);
         input_password = findViewById(R.id.input_password);
         input_passwordConfirm = findViewById(R.id.input_passwordConfirm);
@@ -64,12 +64,12 @@ public class RegisterActivity extends AppCompatActivity {
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                username_value = input_username.getText().toString();
+                name_value = input_name.getText().toString();
                 email_value = input_email.getText().toString();
                 password_value = input_password.getText().toString();
                 passwordConfirm_value = input_passwordConfirm.getText().toString();
 
-                if(TextUtils.isEmpty(username_value) || TextUtils.isEmpty(email_value) ||
+                if(TextUtils.isEmpty(name_value) || TextUtils.isEmpty(email_value) ||
                    TextUtils.isEmpty(password_value) || TextUtils.isEmpty(passwordConfirm_value)){
                     Toast.makeText(RegisterActivity.this, "Tous les champs sont obligatoire", Toast.LENGTH_SHORT).show();
                 }else if(password_value.length() < 6){
@@ -86,14 +86,15 @@ public class RegisterActivity extends AppCompatActivity {
     public void registerUser(View view){
         progress_bar.setVisibility(view.VISIBLE);
         HashMap<String, String> userData = new HashMap<>();
-        userData.put("username",username_value);
+        userData.put("name",name_value);
         userData.put("email",email_value);
         userData.put("password",password_value);
         userData.put("passwordConfirm",passwordConfirm_value);
 
-        final String API_REGISTER = "https://androidapi.herokuapp.com/api/v1/users/register";
+        //final String API_REGISTER = "https:///androidapi.herokuapp.com/api/v1/users/register";
+        final String API = getResources().getString(R.string.BASE_URL) + "/api/v1/actor/register";
 
-        JsonObjectRequest  request = new JsonObjectRequest(Request.Method.POST, API_REGISTER, new JSONObject(userData),
+        JsonObjectRequest  request = new JsonObjectRequest(Request.Method.POST, API, new JSONObject(userData),
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {

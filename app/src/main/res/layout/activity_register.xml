@@ -51,11 +51,11 @@
                     android:visibility="gone"
                     android:id="@+id/progress_bar"/>
                 <EditText
-                    android:id="@+id/input_username"
+                    android:id="@+id/input_name"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:background="@drawable/card"
-                    android:drawableLeft="@drawable/ic_baseline_person_24"
+                    android:drawableLeft="@drawable/ic_baseline_person_account"
                     android:drawablePadding="8dp"
                     android:hint="Username"
                     android:inputType="text"

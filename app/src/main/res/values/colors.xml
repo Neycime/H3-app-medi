@@ -10,4 +10,7 @@
     <color name="btn_rdv">#FF018786</color>
     <color name="primary">#FF018786</color>
     <color name="primary_2">#B8441F</color>
+    <color name="primary_light">#10C8B7</color>
+    <color name="primary_light_gray">#76B3AD</color>
+    <color name="gray">#525353</color>
 </resources>

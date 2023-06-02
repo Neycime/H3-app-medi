@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF018786"
+    tools:context=".HomePatientActivity">
+    <RelativeLayout
+        android:id="@+id/bloc_main"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+        <RelativeLayout
+            android:id="@+id/bloc1"
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/welcom"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Bienvenu"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/primary_2"
+                android:textSize="30dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/text_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="56dp"
+                android:text="xxxxxx"
+                android:textColor="#fff"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/bloc2"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="75dp"
+            android:paddingTop="4dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/todayIs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nous sommes"
+                android:textColor="@color/white"
+                android:textSize="11dp"
+                android:textStyle="italic"/>
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12 juin 2023"
+                android:textColor="@color/primary_2"
+                android:layout_toRightOf="@+id/todayIs"
+                android:layout_marginLeft="4dp"
+                android:textSize="11dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_toEndOf="@+id/bloc_main"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profile_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/profile"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#fff"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="543dp"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/bottom_background"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="155dp"
+            android:layout_margin="32dp"
+            android:background="@drawable/banner_background">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:elevation="20dp"
+                app:cardCornerRadius="10dp"
+                tools:layout_editor_absoluteX="5dp"
+                tools:layout_editor_absoluteY="5dp">
+
+                <ImageView
+                    android:id="@+id/roundedImageView"
+                    android:layout_width="385dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/images" />
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="135dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:id="@+id/planning_action">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="135dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:id="@+id/img_planning"
+                            android:layout_width="66dp"
+                            android:layout_height="64dp"
+                            android:layout_marginStart="31dp"
+                            android:layout_marginTop="32dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/rounded_background" />
+
+                        <ImageView
+                            android:id="@+id/planning_icon"
+                            android:layout_width="49dp"
+                            android:layout_height="46dp"
+                            android:layout_marginStart="40dp"
+                            android:layout_marginTop="40dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_baseline_calendar_month_24" />
+
+                        <TextView
+                            android:id="@+id/planning_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="40dp"
+                            android:layout_marginTop="96dp"
+                            android:text="Planning"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/my_rdv_action"
+                    android:layout_width="142dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="127dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:id="@+id/img_rdv_list"
+                            android:layout_width="66dp"
+                            android:layout_height="64dp"
+                            android:layout_marginStart="31dp"
+                            android:layout_marginTop="32dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/rounded_background" />
+
+                        <ImageView
+                            android:id="@+id/img_rdv_list_icon"
+                            android:layout_width="49dp"
+                            android:layout_height="46dp"
+                            android:layout_marginStart="40dp"
+                            android:layout_marginTop="40dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_baseline_edit_calendar_24" />
+
+                        <TextView
+                            android:id="@+id/img_rdv_list_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="96dp"
+                            android:text="Mes rendez-vous"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/profile_action"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="128dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:id="@+id/img_profile"
+                            android:layout_width="66dp"
+                            android:layout_height="64dp"
+                            android:layout_marginStart="31dp"
+                            android:layout_marginTop="32dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/rounded_background" />
+
+                        <ImageView
+                            android:id="@+id/img_profile_icon"
+                            android:layout_width="49dp"
+                            android:layout_height="46dp"
+                            android:layout_marginStart="40dp"
+                            android:layout_marginTop="40dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_baseline_person_24" />
+
+                        <TextView
+                            android:id="@+id/img_profile_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="40dp"
+                            android:layout_marginTop="96dp"
+                            android:gravity="center"
+                            android:text="Profile"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="135dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="135dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:id="@+id/img_document"
+                            android:layout_width="66dp"
+                            android:layout_height="64dp"
+                            android:layout_marginStart="31dp"
+                            android:layout_marginTop="32dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/rounded_background" />
+
+                        <ImageView
+                            android:id="@+id/img_document_icon"
+                            android:layout_width="49dp"
+                            android:layout_height="46dp"
+                            android:layout_marginStart="40dp"
+                            android:layout_marginTop="40dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_baseline_folder_24" />
+
+                        <TextView
+                            android:id="@+id/img_document_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="96dp"
+                            android:layout_marginEnd="33dp"
+                            android:text="Documents"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="142dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="127dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:id="@+id/img_setting"
+                            android:layout_width="66dp"
+                            android:layout_height="64dp"
+                            android:layout_marginStart="31dp"
+                            android:layout_marginTop="32dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/rounded_background" />
+
+                        <ImageView
+                            android:id="@+id/img_setting_icon"
+                            android:layout_width="49dp"
+                            android:layout_height="46dp"
+                            android:layout_marginStart="40dp"
+                            android:layout_marginTop="40dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_baseline_settings_24" />
+
+                        <TextView
+                            android:id="@+id/img_setting_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="32dp"
+                            android:layout_marginTop="96dp"
+                            android:layout_marginEnd="32dp"
+                            android:text="Parametres"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:id="@+id/logout_action">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="128dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:id="@+id/img_logout"
+                            android:layout_width="66dp"
+                            android:layout_height="64dp"
+                            android:layout_marginStart="31dp"
+                            android:layout_marginTop="32dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/rounded_background" />
+
+                        <ImageView
+                            android:id="@+id/img_logout_icon"
+                            android:layout_width="49dp"
+                            android:layout_height="46dp"
+                            android:layout_marginStart="40dp"
+                            android:layout_marginTop="40dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_baseline_logout_24" />
+
+                        <TextView
+                            android:id="@+id/img_logout_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="96dp"
+                            android:gravity="center"
+                            android:text="Deconnexion"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>
